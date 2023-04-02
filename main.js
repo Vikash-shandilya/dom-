@@ -27,17 +27,39 @@
 // gbc[2].style.fontWeight='bold'
 // gbc[3].style.fontWeight='bold'
 
-let abc=document.getElementsByClassName('list-group-item')
+// let abc=document.getElementsByClassName('list-group-item')
+// console.log(abc);
+
+// for (let index = 0; index < abc.length; index++) {
+//     abc[index].style.fontWeight='bold'
+    
+// }
+
+
+// //by using tag name 
+
+// let bcd=document.getElementsByTagName('li')
+
+// bcd[0].style.backgroundColor='orange';
+
+//queryselector
+
+let abc=document.querySelector('.list-group-item:nth-child(2)')
+abc.style.backgroundColor='green';
 console.log(abc);
 
-for (let index = 0; index < abc.length; index++) {
-    abc[index].style.fontWeight='bold'
+let bcd=document.querySelector('.list-group-item:nth-child(2)')
+bcd.style.display='none';
+
+//queryselectorall
+
+let cde=document.querySelectorAll('.list-group-item')
+cde[1].style.color='green';
+
+let efg=document.querySelectorAll('.list-group-item:nth-child(odd)')
+console.log(efg);
+
+for (let index = 0; index < efg.length; index++) {
+    efg[index].style.backgroundColor='green'
     
 }
-
-
-//by using tag name 
-
-let bcd=document.getElementsByTagName('li')
-
-bcd[0].style.backgroundColor='orange';
