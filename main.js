@@ -15,14 +15,29 @@
 
 // var bold=document.getElementsByClassName('title')
 // bold[0].style.fontWeight='bold';
-// bold[0].style.color='green'
+// // bold[0].style.color='green'
 
-let gbc=document.getElementsByClassName('list-group-item')
+// let gbc=document.getElementsByClassName('list-group-item')
+// console.log(gbc);
 
-gbc[2].style.backgroundColor='green'
+// gbc[2].style.backgroundColor='green'
 
-gbc[0].style.fontWeight='bold'
-gbc[1].style.fontWeight='bold'
-gbc[2].style.fontWeight='bold'
-gbc[3].style.fontWeight='bold'
+// gbc[0].style.fontWeight='bold'
+// gbc[1].style.fontWeight='bold'
+// gbc[2].style.fontWeight='bold'
+// gbc[3].style.fontWeight='bold'
 
+let abc=document.getElementsByClassName('list-group-item')
+console.log(abc);
+
+for (let index = 0; index < abc.length; index++) {
+    abc[index].style.fontWeight='bold'
+    
+}
+
+
+//by using tag name 
+
+let bcd=document.getElementsByTagName('li')
+
+bcd[0].style.backgroundColor='orange';
