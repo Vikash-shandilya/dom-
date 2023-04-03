@@ -44,22 +44,108 @@
 
 //queryselector
 
-let abc=document.querySelector('.list-group-item:nth-child(2)')
-abc.style.backgroundColor='green';
-console.log(abc);
+// let abc=document.querySelector('.list-group-item:nth-child(2)')
+// abc.style.backgroundColor='green';
+// console.log(abc);
 
-let bcd=document.querySelector('.list-group-item:nth-child(2)')
-bcd.style.display='none';
+// let bcd=document.querySelector('.list-group-item:nth-child(2)')
+// bcd.style.display='none';
 
-//queryselectorall
+// //queryselectorall
 
-let cde=document.querySelectorAll('.list-group-item')
-cde[1].style.color='green';
+// let cde=document.querySelectorAll('.list-group-item')
+// cde[1].style.color='green';
 
-let efg=document.querySelectorAll('.list-group-item:nth-child(odd)')
-console.log(efg);
+// let efg=document.querySelectorAll('.list-group-item:nth-child(odd)')
+// console.log(efg);
 
-for (let index = 0; index < efg.length; index++) {
-    efg[index].style.backgroundColor='green'
+// for (let index = 0; index < efg.length; index++) {
+//     efg[index].style.backgroundColor='green'
     
-}
+// }
+
+parentelement
+let itemselect=document.querySelector('#items')
+console.log(itemselect);
+itemselect.parentNode.style.backgroundColor='green'
+//last element child
+
+console.log(itemselect.lastElementChild)
+itemselect.lastElementChild.textContent='newitem4'
+//lastchild
+
+console.log(itemselect.lastChild);
+// this is not a good practise to use last child we should 
+//use children instead
+//create child
+// there is nothing callled create child its create elememnt
+
+//firstchild this is also not a very good practise
+console.log(itemselect.firstChild);
+
+//nextsibling and next element sibling
+
+let sibling=document.querySelectorAll('.list-group-item')
+console.log(sibling[0]);
+console.log(sibling[0].nextSibling);
+
+console.log(sibling[0].nextElementSibling.textContent);
+
+//previous sibling and previous element sibling
+
+console.log(sibling[4].previousSibling.textContent);
+console.log(sibling[3].previousElementSibling.textContent);
+
+//createelement
+
+let newdiv=document.createElement('div')
+
+//add class
+newdiv.className='hii'
+//add id
+newdiv.id='hello'
+newdiv.setAttribute('title','checking')
+
+//create textnode
+let newdivtext=document.createTextNode('hello world')
+
+//appendchild
+
+newdiv.appendChild(newdivtext)
+
+//append that newdiv before h1
+
+let container=document.querySelector('header .container')
+let h1=document.querySelector('header h1')
+
+container.insertBefore(newdiv,h1)
+newdiv.style.color='orange'
+
+//add hello world before item1
+
+let newdiv1=document.createElement('div')
+
+let h2=document.createTextNode('hello world')
+newdiv1.className='hello world'
+
+newdiv1.append(h2)
+let container1=document.querySelector('#items')
+let appendelement=document.querySelector('.item-group-item')
+let newlistgroupitem=container1.children[0]
+console.log(newlistgroupitem);
+container1.insertBefore(newdiv1,newlistgroupitem)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
