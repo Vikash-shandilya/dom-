@@ -137,39 +137,62 @@
 
 //on clicking delete button we should remove the new li tag
 
-let deletebtn=document.getElementsByClassName("btn btn-danger btn-sm float-right delete")
-console.log(deletebtn);
+// let deletebtn=document.getElementsByClassName("btn btn-danger btn-sm float-right delete")
+// console.log(deletebtn);
 
-for (let i= 0; i<deletebtn.length; i++) {
-    deletebtn[i].addEventListener('click',deleteitem)
+// for (let i= 0; i<deletebtn.length; i++) {
+//     deletebtn[i].addEventListener('click',deleteitem)
     
     
-}
-function deleteitem(e)
-{
-    if(confirm(' are you sure'))
-    {
-        let itemtoremove=e.target.parentElement;
-        let parentelement=e.target.parentElement.parentElement;
-        parentelement.removeChild(itemtoremove)
+// }
+// function deleteitem(e)
+// {
+//     if(confirm(' are you sure'))
+//     {
+//         let itemtoremove=e.target.parentElement;
+//         let parentelement=e.target.parentElement.parentElement;
+//         parentelement.removeChild(itemtoremove)
         
 
-    }
+//     }
     
+// }
+
+// //create the edit button next to delete button 
+// let listgroup = document.getElementsByClassName("list-group-item");
+// for (let i = 0; i < listgroup.length; i++) {
+//     let editbutton = document.createElement('button');
+//     editbutton.setAttribute('class', 'btn btn-orange btn-sm float-right edit');
+//     editbutton.textContent = 'Edit';
+
+//     listgroup[i].appendChild(editbutton);
+    
+    
+// }
+
+
+//filter items
+function filterItems(e){
+    //convert text to lowercase
+    var text = e.target.value.toLowerCase();
+    //get lis
+    var items = itemList.getElementsByTagName('li');
+    //convert to an array
+    Array.from(items).forEach(function(item){
+        
+        var itemNameFirst = item.firstChild.textContent;
+        
+        var children = document.getElementById('item').children;
+        var secondChild = item.childNodes[1].textContent;
+        
+        if((itemNameFirst.toLowerCase().indexOf(text)!=-1)|| (secondChild.toLowerCase().indexOf(text)!=-1))
+        {
+            item.style.display = 'block';
+        }else{
+            item.style.display = 'none';
+        }
+    })
 }
-
-//create the edit button next to delete button 
-let listgroup = document.getElementsByClassName("list-group-item");
-for (let i = 0; i < listgroup.length; i++) {
-    let editbutton = document.createElement('button');
-    editbutton.setAttribute('class', 'btn btn-orange btn-sm float-right edit');
-    editbutton.textContent = 'Edit';
-
-    listgroup[i].appendChild(editbutton);
-    
-    
-}
-
 
 
 
